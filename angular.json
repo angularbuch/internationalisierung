@@ -10,6 +10,12 @@
           "strict": true
         }
       },
+      "i18n": {
+        "sourceLocale": "de",
+        "locales": {
+          "fr": "src/assets/locales/messages.fr.xlf"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "ch",
@@ -27,9 +33,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+              "src/styles.css",
+              "src/assets/css/jquery-ui.css",
+              "src/assets/css/bootstrap.min.css"
+            ]
           },
           "configurations": {
             "production": {
@@ -60,6 +67,16 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "de": {
+              "localize": ["de"],
+              "outputPath": "dist/internationalisierung/de/",
+              "baseHref": "de"
+            },
+            "fr": {
+              "localize": ["fr"],
+              "outputPath": "dist/internationalisierung/fr/",
+              "baseHref": "fr"
             }
           },
           "defaultConfiguration": "production"
@@ -72,7 +89,14 @@
             },
             "development": {
               "browserTarget": "internationalisierung:build:development"
+            },
+            "fr": {
+              "browserTarget": "internationalisierung:build:fr"
+            },
+            "de": {
+              "browserTarget": "internationalisierung:build:de"
             }
+
           },
           "defaultConfiguration": "development"
         },
@@ -94,9 +118,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+              "src/styles.css",
+              "src/assets/css/jquery-ui.css",
+              "src/assets/css/bootstrap.min.css"
+            ]
           }
         }
       }
